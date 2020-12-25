@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="Myform" method="get">
+        <table border=1>
+            <tr>
+                <td>
+                    <input type="checkbox" name="Larg" id="Larg">
+                    <label>Largeur :</label>
+                    <input type="text" name="texte1" id="texte1"><br />
+                    <input type="checkbox" name="Haut" id="Haut">
+                    <label>Hauteur :</label>
+                    <input type="text" name="texte2" id="texte2"><br />
+                    <label>Source :</label>
+                    <select name="select" id="select">
+                        <option value="3.jpg">Voiture Verte</option>
+                        <option value="1.jpg">Voiture Bleu</option>
+                        <option value="2.jpg">Voiture Rouge</option>
+                    </select><br />
+                    <input type="button" name="modif" value="Modifier" OnClick="Changer();" />
+                </td>
+                <td><img name="image" id="image" src="3.jpg" width="100" height="100" /></td>
+            </tr>
+        </table>
+    </form>
+
+
+    <script>
+        function Changer() {
+
+            if ((document.getElementById("texte1").value != "") && (document.getElementById("Larg").checked == true)) {
+                document.getElementById("image").width = document.getElementById("texte1").value;
+            }
+            if ((document.getElementById("texte2").value != "") && (document.getElementById("Haut").checked == true)) {
+                document.getElementById("image").height = document.getElementById("texte2").value;
+            }
+            if (document.getElementById("select").value != "") {
+                document.getElementById("image").src = document.getElementById("select").value;
+            }
+
+        }
+    </script>
+</body>
+</body>
+
+</html>
